@@ -4,7 +4,7 @@ set -e
 # ================================
 # Project Configuration
 # ================================
-export PROJECTFOLDER="LOS 21"
+export PROJECTFOLDER="LOS"
 export PROJECTID="72"
 export REPO_INIT="https://github.com/LineageOS/android.git"
 export BUILD_DIFFERENT_ROM="repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.1 --git-lfs" # Change this if you'd like to build something else
