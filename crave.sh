@@ -4,9 +4,11 @@ set -e
 # ================================
 # Project Configuration
 # ================================
-export PROJECTFOLDER="LOS"
-export PROJECTID="93"
-export REPO_INIT="https://github.com/accupara/los22.git -b lineage-22.1 --git-lfs --depth=1"
+export PROJECTFOLDER="LOS 21"
+export PROJECTID="72"
+export REPO_INIT="https://github.com/LineageOS/android.git"
+export BUILD_DIFFERENT_ROM="repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.1 --git-lfs" # Change this if you'd like to build something else
+
 # ================================
 # Destroy Old Clones
 # ================================
@@ -63,15 +65,12 @@ crave run --no-patch -- "
   # Setup build environment
   # ================================
   . build/envsetup.sh
-  export BUILD_USERNAME=BLU
-  export BUILD_HOSTNAME=crave
-  export TZ=Asia/Jakarta
 
   # ================================
   # Build
   # ================================
   echo '>>> Starting build'
-  lunch lineage_peridot-bp3a-user
+  axion peridot user gms core
   make installclean
-  m evolution 
+  ax -br
 "
