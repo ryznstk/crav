@@ -7,7 +7,7 @@ set -e
 export PROJECTFOLDER="LOS"
 export PROJECTID="93"
 export REPO_INIT="https://github.com/accupara/los22.git -b lineage-22.1 --git-lfs --depth=1"
-export BUILD_DIFFERENT_ROM="repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.1 --git-lfs" # Change this if you'd like to build something else
+export BUILD_DIFFERENT_ROM="repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16-QPR2 -g default,-mips,-darwin,-notdefault" # Change this if you'd like to build something else
 
 # ================================
 # Destroy Old Clones
@@ -44,9 +44,9 @@ crave run --no-patch -- "
   rm -rf out/target/product/peridot
   
   # ================================
-  # Initialize AxionOS repo
+  # Initialize Infinity X repo
   # ================================
-  echo '>>> Initializing AxionAOSP repo'
+  echo '>>> Initializing Infinity X repo'
   $BUILD_DIFFERENT_ROM
 
   # ================================
@@ -70,7 +70,7 @@ crave run --no-patch -- "
   # Build
   # ================================
   echo '>>> Starting build'
-  axion peridot user gms core
+  lunch infinity_peridot-user
   make installclean
-  ax -br
+  m bacon
 "
