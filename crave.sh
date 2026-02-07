@@ -71,5 +71,5 @@ crave run --no-patch -- "
   echo '>>> Starting build'
   lunch lineage_peridot-bp4a-user
   make installclean
-  m lunaris
+  m bacon
 "
