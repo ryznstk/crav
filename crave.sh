@@ -52,7 +52,7 @@ crave run --no-patch -- "
   # Clone local manifests
   # ================================
   echo '>>> Cloning local manifests'
-  git clone https://github.com/ryznstk/manifest_peridot.git -b lineage-23.0 .repo/local_manifests/
+  git clone https://github.com/ryznstk/manifest.git -b main .repo/local_manifests/
 
   # ================================
   # Sync sources
