@@ -7,7 +7,7 @@ set -e
 export PROJECTFOLDER="LOS"
 export PROJECTID="93"
 export REPO_INIT="https://github.com/accupara/los22.git -b lineage-22.1 --git-lfs --depth=1"
-export BUILD_DIFFERENT_ROM="repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault"
+export BUILD_DIFFERENT_ROM="repo init -u https://github.com/Lunaris-AOSP/android -b test --git-lfs"
 # ================================
 # Destroy Old Clones
 # ================================
@@ -63,13 +63,13 @@ crave run --no-patch -- "
   # ================================
   # Setup build environment
   # ================================
-  . build/envsetup.sh
+  . b*/env*
 
   # ================================
   # Build
   # ================================
   echo '>>> Starting build'
-  lunch infinity_peridot-user
+  lunch lineage_peridot-bp4a-userdebug
   make installclean
-  mka bacon
+  m bacon
 "
