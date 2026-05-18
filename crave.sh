@@ -69,7 +69,7 @@ crave run --no-patch -- "
   # Build
   # ================================
   echo '>>> Starting build'
-  lunch lineage_peridot-bp4a-userdebug
+  lunch lineage_peridot-bp4a-user
   make installclean
   m bacon
 "
