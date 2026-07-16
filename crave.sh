@@ -63,7 +63,7 @@ crave run --no-patch -- "
   # ================================
   # Setup build environment
   # ================================
-  . b*/env*
+  . build/envsetup.sh
 
   # ================================
   # Build
