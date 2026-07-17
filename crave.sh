@@ -59,6 +59,8 @@ crave run --no-patch -- "
   # ================================
   echo '>>> Syncing sources'
   /opt/crave/resync.sh
+  
+  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
   # ================================
   # Setup build environment
