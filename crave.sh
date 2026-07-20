@@ -45,7 +45,7 @@ crave run --no-patch -- "
   # ================================
   # Initialize EVO repo
   # ================================
-  echo '>>> Initializing Lunaris repo'
+  echo '>>> Initializing Evolution X repo'
   $BUILD_DIFFERENT_ROM
 
   # ================================
@@ -57,8 +57,14 @@ crave run --no-patch -- "
   # ================================
   # Sync sources
   # ================================
-  echo '>>> Syncing sources'
-  /opt/crave/resync.sh
+echo '>>> Syncing sources'
+
+if [ -f /opt/crave/resync.sh ]; then
+    /opt/crave/resync.sh
+else
+    repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+fi
+  
   
   # ================================
   # Setup build environment
