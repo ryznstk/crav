@@ -4,6 +4,7 @@ set -e
 # ================================
 # Project Configuration
 # ================================
+export PROJECTFOLDER="LOS"
 export PROJECTID="93"
 export REPO_INIT="https://github.com/accupara/los22.git -b lineage-22.1 --git-lfs --depth=1"
 export BUILD_DIFFERENT_ROM="repo init -u https://github.com/Evolution-X/manifest -b cnb --git-lfs --depth=1"
