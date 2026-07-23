@@ -4,9 +4,8 @@ set -e
 # ================================
 # Project Configuration
 # ================================
-export PROJECTFOLDER="EVO"
-export PROJECTID="82"
-export REPO_INIT="https://github.com/PixelOS-AOSP/android_manifest --depth=1"
+export PROJECTID="93"
+export REPO_INIT="https://github.com/accupara/los22.git -b lineage-22.1 --git-lfs --depth=1"
 export BUILD_DIFFERENT_ROM="repo init -u https://github.com/Evolution-X/manifest -b cnb --git-lfs --depth=1"
 # ================================
 # Destroy Old Clones
@@ -59,7 +58,12 @@ crave run --no-patch -- "
   # ================================
 echo '>>> Syncing sources'
 /opt/crave/resync.sh
-  
+
+if [ -f /opt/crave/resync.sh ]; then
+    /opt/crave/resync.sh
+else
+    repo sync -c --force-sync --no-tags --no-clone-bundle --force-remove-dirty
+fi
 
   # ================================
   # Setup build environment
