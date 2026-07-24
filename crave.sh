@@ -58,7 +58,6 @@ crave run --no-patch -- "
   # Sync sources
   # ================================
 echo '>>> Syncing sources'
-/opt/crave/resync.sh
 
 if [ -f /opt/crave/resync.sh ]; then
     /opt/crave/resync.sh
